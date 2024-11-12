@@ -18,8 +18,9 @@ module.exports = {
       },
 
       fontSize: {
-        'base-lg': '1.025rem',
+        'base-lg': '1.030rem',
       },
+
     },
   },
   plugins: [
