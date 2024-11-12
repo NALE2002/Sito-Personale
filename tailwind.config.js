@@ -16,6 +16,10 @@ module.exports = {
         'lato-regular': ['Lato, sans-serif'],
         
       },
+
+      fontSize: {
+        'base-lg': '1.025rem',
+      },
     },
   },
   plugins: [

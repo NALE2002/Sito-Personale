@@ -558,9 +558,9 @@ video {
   position: relative;
 }
 
-.mx-\[33\%\] {
-  margin-left: 33%;
-  margin-right: 33%;
+.mx-\[32\%\] {
+  margin-left: 32%;
+  margin-right: 32%;
 }
 
 .my-\[3\%\] {
@@ -597,7 +597,20 @@ video {
   padding: 0.5rem;
 }
 
+.align-middle {
+  vertical-align: middle;
+}
+
+.text-base-lg {
+  font-size: 1.025rem;
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-200:hover {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
