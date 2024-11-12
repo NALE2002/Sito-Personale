@@ -5,9 +5,16 @@ module.exports = {
     './src/img/**/*.{html,js,jpg,png}',
   ],
   theme: {
+
     extend: {
+
       colors: {
         'main': '#121111',
+      },
+
+      fontFamily: {
+        'lato-regular': ['Lato, sans-serif'],
+        
       },
     },
   },
