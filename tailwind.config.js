@@ -21,6 +21,10 @@ module.exports = {
         'base-lg': '1.030rem',
       },
 
+      height: {
+        '22': '5.5rem',
+      },
+
     },
   },
   plugins: [
