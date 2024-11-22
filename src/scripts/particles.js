@@ -20,10 +20,10 @@ const particlesConfig = {
 };
 
 const meteorsConfig = {
-    minSize: 2,
-    maxSize: 4,
-    minSpeedX: 0.3,
-    maxSpeedX: 0.5,
+    minSize: 4,
+    maxSize: 7,
+    minSpeedX: 0.7,
+    maxSpeedX: 1,
 };
 
 class Meteor {
@@ -38,7 +38,7 @@ class Meteor {
 
     draw(){
         ctx.beginPath();
-        ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
         ctx.closePath();
         ctx.fill();
