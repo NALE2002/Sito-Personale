@@ -47,6 +47,7 @@ class Meteor {
     update(){
         this.x = this.x + this.speedX;
         
+
     }
 
 }
@@ -105,8 +106,6 @@ for(let i = 0; i < particlesConfig.count; i++){
     particles.push(new Particle(Math.random() * c.width, Math.random() * c.height));
 }
 
-meteors.push(new Meteor(0, Math.random() * c.height));
-
 //rileva movimento del mouse
 // window.addEventListener("mousemove", (e) => {
 //     mouse.x = e.x;
@@ -116,10 +115,14 @@ meteors.push(new Meteor(0, Math.random() * c.height));
 function animate(){
     ctx.clearRect(0,0,c.width,c.height);
 
+    if (Math.random() < 0.0002){  // Probabilità 2%
+        meteors.push(new Meteor(0, Math.random() * c.height));
+    }
+
     particles.forEach((particle) => {
         particle.draw();
         particle.update();
-    });
+    }); 
 
     meteors.forEach((meteor) => {
         meteor.draw();
