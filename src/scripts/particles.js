@@ -10,11 +10,39 @@ window.addEventListener('resize', () => {
 });
 
 const particles = [];
+const meteors = [];
+
+// const mouse = {x: null, y: null};
 
 const particlesConfig = {
     count: 150,
     size: 2,
 };
+
+const meteorsConfig = {
+    minSize: 2,
+    maxSize: 4,
+    minSpeedX: 0.3,
+    maxSpeedX: 0.5,
+};
+
+class Meteor {
+    constructor(x,y){
+        this.x = x;
+        this.y = y;
+        this.color = randomColor();
+        this.size = Math.random() * (meteorsConfig.minSize - meteorsConfig.maxSize) + meteorsConfig.maxSize; 
+        this.speedX = Math.random() * (meteorsConfig.minSpeedX - meteorsConfig.maxSpeedX) + meteorsConfig.maxSpeedX;
+
+    }
+
+    draw(){
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+    }
+
+
+}
 
 class Particle {
     constructor(x,y){
@@ -42,12 +70,39 @@ class Particle {
 
         if(this.y < 0 || this.y > c.height)
             this.speedY = this.speedY * -1;
+
+
+        // console.log("numero random: ", Math.random() * (1 - 5) + 5);
+
+        // const dx = mouse.x - this.x;
+        // const dy = mouse.y - this.y;
+
+        // const distance = Math.sqrt(dx * dx + dy * dy);
+
+        // if (distance < 40) {
+        //   this.x -= dx / 10;
+        //   this.y -= dy / 10;
+        // }
+
     }
+}
+
+function randomColor(){
+    const colors = ["lightgreen","red","lightblue","yellow","purple","green"];
+    const i = Math.floor(Math.random() * colors.length);
+
+    return colors[i];
 }
 
 for(let i = 0; i < particlesConfig.count; i++){
     particles.push(new Particle(Math.random() * c.width, Math.random() * c.height));
 }
+
+//rileva movimento del mouse
+window.addEventListener("mousemove", (e) => {
+    mouse.x = e.x;
+    mouse.y = e.y;
+});
 
 function animate(){
     ctx.clearRect(0,0,c.width,c.height);
