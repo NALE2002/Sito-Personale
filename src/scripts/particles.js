@@ -37,10 +37,17 @@ class Meteor {
     }
 
     draw(){
-        ctx.fillStyle = this.color;
         ctx.beginPath();
+        ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.closePath();
+        ctx.fill();
     }
 
+    update(){
+        this.x = this.x + this.speedX;
+        
+    }
 
 }
 
@@ -98,11 +105,13 @@ for(let i = 0; i < particlesConfig.count; i++){
     particles.push(new Particle(Math.random() * c.width, Math.random() * c.height));
 }
 
+meteors.push(new Meteor(0, Math.random() * c.height));
+
 //rileva movimento del mouse
-window.addEventListener("mousemove", (e) => {
-    mouse.x = e.x;
-    mouse.y = e.y;
-});
+// window.addEventListener("mousemove", (e) => {
+//     mouse.x = e.x;
+//     mouse.y = e.y;
+// });
 
 function animate(){
     ctx.clearRect(0,0,c.width,c.height);
@@ -110,6 +119,11 @@ function animate(){
     particles.forEach((particle) => {
         particle.draw();
         particle.update();
+    });
+
+    meteors.forEach((meteor) => {
+        meteor.draw();
+        meteor.update();
     });
 
     requestAnimationFrame(animate);
