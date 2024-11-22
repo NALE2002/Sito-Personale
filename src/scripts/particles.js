@@ -11,7 +11,7 @@ window.addEventListener('resize', () => {
 
 const particles = [];
 const meteors = [];
-
+var lastMeteor = Date.now();
 // const mouse = {x: null, y: null};
 
 const particlesConfig = {
@@ -115,9 +115,10 @@ for(let i = 0; i < particlesConfig.count; i++){
 function animate(){
     ctx.clearRect(0,0,c.width,c.height);
 
-    if (Math.random() < 0.0002){  // Probabilità 2%
-        meteors.push(new Meteor(0, Math.random() * c.height));
-    }
+        if (Date.now() - lastMeteor >= Math.random() * (25000 - 50000) + 50000){ //genera una meteora con l'intervallo tra 25 e 50 secondi 
+            meteors.push(new Meteor(0, Math.random() * c.height));
+            lastMeteor = Date.now();
+        }
 
     particles.forEach((particle) => {
         particle.draw();
