@@ -40,8 +40,13 @@ class Meteor {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
-        ctx.closePath();
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = this.color;
         ctx.fill();
+        ctx.closePath();
+
+        // ctx.beginPath();
+        // ctx.arc
     }
 
     update(){
@@ -62,6 +67,10 @@ class Particle {
     }
 
     draw(){
+
+        ctx.shadowBlur = 0; 
+        ctx.shadowColor = "transparent";
+
         ctx.fillStyle = "lightblue";
         ctx.beginPath();
         ctx.arc(this.x,this.y,this.size,0,2 * Math.PI);
