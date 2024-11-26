@@ -16,7 +16,7 @@ module.exports = {
 
       fontFamily: {
         'lato-regular': ['Lato, sans-serif'],
-        
+        'montserrat-regular': ['Montserrat, sans-serif'],
       },
 
       fontSize: {

@@ -107,7 +107,7 @@ class Particle {
 }
 
 function randomColor(){
-    const colors = ["lightgreen","red","lightblue","yellow","purple","green"];
+    const colors = ["lightgreen","lightred","lightblue","yellow","lightpurple","lightgreen"];
     const i = Math.floor(Math.random() * colors.length);
 
     return colors[i];
