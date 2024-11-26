@@ -12,7 +12,7 @@ window.addEventListener('resize', () => {
 const particles = [];
 const meteors = [];
 var lastMeteor = Date.now();
-// const mouse = {x: null, y: null};
+// let animationFrameId;
 
 const particlesConfig = {
     count: 150,
@@ -47,7 +47,7 @@ class Meteor {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
         ctx.closePath();
-        
+
     }
 
     update(){
@@ -89,19 +89,6 @@ class Particle {
         if(this.y < 0 || this.y > c.height)
             this.speedY = this.speedY * -1;
 
-
-        // console.log("numero random: ", Math.random() * (1 - 5) + 5);
-
-        // const dx = mouse.x - this.x;
-        // const dy = mouse.y - this.y;
-
-        // const distance = Math.sqrt(dx * dx + dy * dy);
-
-        // if (distance < 40) {
-        //   this.x -= dx / 10;
-        //   this.y -= dy / 10;
-        // }
-
     }
 }
 
@@ -115,12 +102,6 @@ function randomColor(){
 for(let i = 0; i < particlesConfig.count; i++){
     particles.push(new Particle(Math.random() * c.width, Math.random() * c.height));
 }
-
-//rileva movimento del mouse
-// window.addEventListener("mousemove", (e) => {
-//     mouse.x = e.x;
-//     mouse.y = e.y;
-// });
 
 function animate(){
     ctx.clearRect(0,0,c.width,c.height);
@@ -142,5 +123,14 @@ function animate(){
 
     requestAnimationFrame(animate);
 }
+
+// document.addEventListener("visibilitychange", () => {
+//     if (document.visibilityState === "visible") {
+//         lastMeteor = Date.now();
+//         animate();
+//     } else {
+//         cancelAnimationFrame(animationFrameId);
+//     }
+// });
 
 animate();
