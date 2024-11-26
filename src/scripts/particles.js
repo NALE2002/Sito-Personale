@@ -24,6 +24,8 @@ const meteorsConfig = {
     maxSize: 7,
     minSpeedX: 0.7,
     maxSpeedX: 1,
+    minSpeedY: -0.4,
+    maxSpeedY: 0.4,
 };
 
 class Meteor {
@@ -33,7 +35,7 @@ class Meteor {
         this.color = randomColor();
         this.size = Math.random() * (meteorsConfig.minSize - meteorsConfig.maxSize) + meteorsConfig.maxSize; 
         this.speedX = Math.random() * (meteorsConfig.minSpeedX - meteorsConfig.maxSpeedX) + meteorsConfig.maxSpeedX;
-
+        this.speedY = Math.random() * (meteorsConfig.minSpeedY - meteorsConfig.maxSpeedY) + meteorsConfig.maxSpeedY;
     }
 
     draw(){
@@ -51,7 +53,7 @@ class Meteor {
 
     update(){
         this.x = this.x + this.speedX;
-        
+        this.y = this.y + this.speedY;
 
     }
 
