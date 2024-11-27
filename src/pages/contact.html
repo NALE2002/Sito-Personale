@@ -40,27 +40,26 @@
 
         <hr class="mt-8 border-stone-800 w-[96%] ml-2">
 
-        <form action="" class="flex flex-col p-2 text-lg">
-            <div class="flex flex-row justify-between mt-6">
-                <div class="flex flex-col">
-                    <label class="text-sm ml-3 mb-0">First name</label>
-                    <input type="text" class="ml-2 py-3 px-1 bg-transparent border-b border-b-stone-500 focus:outline-none" value name="fname" required>
-                </div>
+        <form action="" class="flex flex-col p-2 text-base-lg">
 
-                <div class="flex flex-col">
-                    <label class="text-sm ml-1 mb-0">Last name</label>
-                    <input type="text" class="mr-5 px-1 py-3 bg-transparent border-b border-b-stone-500 focus:outline-none" value name="lname" required>
-                </div>
-            </div>
+            <!-- <div class="flex flex-col mt-6">
+                <label class="text-sm ml-3 mb-0">Full name</label>
+                <input type="text" class="py-3 px-1 bg-transparent border-b border-b-stone-500 focus:outline-none ml-2" value name="name" required>
+            </div> -->
 
             <div class="flex flex-col mt-8">
                 <label class="text-sm ml-3 mb-0">Email address</label>
-                <input type="email" class="px-1 py-3 bg-transparent border-b border-b-stone-500 focus:outline-none w-[96%] ml-2" value name="email" required>
+                <input type="email" class="px-1 py-3 bg-transparent border-b border-b-stone-500 focus:outline-none w-[96%] ml-2 focus:border-b-stone-700 transition ease-in-out duration-500" value name="email" required>
+            </div>
+
+            <div class="flex flex-col mt-8">
+                <label class="text-sm ml-3 mb-0">Subject</label>
+                <input type="text" class="px-1 py-3 bg-transparent border-b border-b-stone-500 focus:outline-none w-[96%] ml-2 focus:border-b-stone-700 transition ease-in-out duration-500" value name="subject" required>
             </div>
 
             <div class="flex flex-col mt-8">
                 <label class="text-sm ml-3 mb-0">Message</label>
-                <textarea class="px-1 py-3 bg-transparent border-b border-b-stone-500 focus:outline-none w-[96%] ml-2" value name="message" required></textarea>
+                <textarea class="px-1 py-3 bg-transparent border-b border-b-stone-500 focus:outline-none w-[96%] ml-2 focus:border-b-stone-700 transition ease-in-out duration-500" value name="message" required></textarea>
             </div>
 
             <button type="submit" class="flex flex-col w-[96%] ml-2 h-22 mt-4 bg-zinc-900 items-center justify-center text-sm font-semibold rounded-lg p-3 shadow-md hover:shadow-blue-500 transition-all duration-300 ease-out">
