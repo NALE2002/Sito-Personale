@@ -7,7 +7,7 @@ const PORT = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.post('/contact', async(req,res) => {
+app.post('/send-email', async(req,res) => {
     
     const {email , subject, message} = req.body;
 
@@ -16,15 +16,15 @@ app.post('/contact', async(req,res) => {
             service: 'gmail',
             auth: {
                 user: 'nale2002pers@gmail.com',
-                pass: 'Sicurissima123!',
-            }
+                pass: 'pqyn ccis vbgx llzm',
+            },
         });
         
         const mailOptions = {
             from: email,
             to: 'nale2002pers@gmail.com',
             subject: subject,
-            message: message,
+            text: message,
         };
 
         await transporter.sendMail(mailOptions);
@@ -35,8 +35,8 @@ app.post('/contact', async(req,res) => {
         res.status(500).send("Errore durante l'invio del messaggio");
     }   
 
-    app.listen(PORT, () => {
-        console.log('server in esecuzione su https:localhost:${PORT}');
-    });
+});
 
+app.listen(PORT, () => {
+    console.log('server in esecuzione su https:localhost:',PORT);
 });
