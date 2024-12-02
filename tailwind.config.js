@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         'main': '#121111',
         'prova': '#1E1D1D',
+        'rosso-500': '#EF4444',
       },
 
       fontFamily: {

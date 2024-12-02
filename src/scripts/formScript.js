@@ -3,6 +3,7 @@ const submitButton = document.getElementById("submitButton");
 const submitIcon = document.getElementById("submitIcon");
 const loadingIcon = document.getElementById("loadingIcon");
 const successIcon = document.getElementById("successIcon");
+const errorIcon = document.getElementById("errorIcon");
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -16,13 +17,27 @@ form.addEventListener("submit", async (e) => {
             method: form.method,
             body: new FormData(form),
         });
-        
+
         if(res.ok){
             loadingIcon.classList.add("hidden");
             successIcon.classList.remove("hidden");
             submitButton.classList.add("bg-green-500");
+            setTimeout(() => {
+                submitButton.disabled = false;
+                successIcon.classList.add("hidden");
+                submitIcon.classList.remove("hidden");
+                submitButton.classList.remove("bg-green-500");
+            }, 4000);
         } else {
-            alert("errore durante l'invio del messaggio");
+            loadingIcon.classList.add("hidden");
+            errorIcon.classList.remove("hidden");
+            submitButton.classList.add("bg-rosso-500");
+            setTimeout(() => {
+                submitButton.disabled = false;
+                errorIcon.classList.add("hidden");
+                submitIcon.classList.remove("hidden");
+                submitButton.classList.remove("bg-rosso-500");
+            }, 4000);
         }
     } catch(error){
         console.error("errore durante l'invio del messaggio")
