@@ -21,12 +21,12 @@ form.addEventListener("submit", async (e) => {
         if(res.ok){
             loadingIcon.classList.add("hidden");
             successIcon.classList.remove("hidden");
-            submitButton.classList.add("bg-green-500");
+            submitButton.classList.add("bg-verde-500");
             setTimeout(() => {
                 submitButton.disabled = false;
                 successIcon.classList.add("hidden");
                 submitIcon.classList.remove("hidden");
-                submitButton.classList.remove("bg-green-500");
+                submitButton.classList.remove("bg-verde-500");
             }, 4000);
         } else {
             loadingIcon.classList.add("hidden");

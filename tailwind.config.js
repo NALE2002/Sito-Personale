@@ -13,6 +13,7 @@ module.exports = {
         'main': '#121111',
         'prova': '#1E1D1D',
         'rosso-500': '#EF4444',
+        'verde-500': '#22C55E',
       },
 
       fontFamily: {
