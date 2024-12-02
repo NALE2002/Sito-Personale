@@ -1,15 +1,20 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const cors = require("cors");
 const app = express();
 const PORT = 3000;
+const multer = require('multer');
+const upload = multer();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(cors());
 
-app.post('/send-email', async(req,res) => {
-    
+app.post('/send-email',upload.none(), async(req,res) => {
+
     const {email , subject, message} = req.body;
+    console.log("dati ricevuti: ", req.body);
 
     try{
         const transporter = nodemailer.createTransport({
