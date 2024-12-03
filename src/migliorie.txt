@@ -5,4 +5,5 @@ aggiungere sfondo animato o qualcosa di figo (fatto praticamente)
 aggiungere qualcosa nella sezione dell'immagine personale (oltre all'immagine ovviamente)
 
 
-cambiare i messaggi in formScript 
+cambiare i messaggi in formScript
+aggiungere protezione nei campi di input in formScript 
